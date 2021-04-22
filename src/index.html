@@ -1,12 +1,33 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title>Webpack Starter Kit</title>
+    <title>Travel Tracker</title>
   </head>
   <body>
-    <h1>Webpack Starter Kit</h1>
+    <header>
+      <div class="top-header">
+        <h1>Welcome User</h1><!-- welcome message -->
+        <button class="logout" type="button" name="button">Logout</button> <!-- logout button -->
+      </div>
+      <div class="bottom-header">
+        <h2 class="years-total">You have spent $$$$$ this year</h2> <!-- Total spent this year -->
+        <button class="book-trip" type="button" name="button">Book Trip</button> <!-- Book a trip -->
+      </div>
+    </header>
+    <section class="past-trips">
+      <h3>Past Trips</h3>
+    </section>
+    <section class="present">
+      <h3>Present Trips</h3>
+    </section>
+    <section class="upcoming">
+      <h3>Upcoming Trips</h3>
+    </section>
+    <section class="pending">
+      <h3>Pending Trips</h3>
+    </section>
 
-    <img src="./images/turing-logo.png" alt="turing logo" height="100px" width="100px">
+
 
     <!-- Do not include the index.js or main.bundle.js file here - it is done automatically by the webpack server -->
   </body>

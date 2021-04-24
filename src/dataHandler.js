@@ -6,6 +6,7 @@
       .catch(err => console.log('All Travelers Data', err.message))
   },
 
+//Not sure if I really need this
   getSingleTraveler(userId) {
     return fetch(`http://localhost:3001/api/v1/travelers/${userId}`)
       .then(response => response.json())

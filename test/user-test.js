@@ -28,7 +28,7 @@ describe('User', () => {
     expect(user.type).to.equal('shopper');
     expect(user.trips).to.equal(null);
 
-    user.returnUsersTrips(data.sampleData.sampleTrips);
+    user.returnUsersTrips(data.sampleData);
 
     expect(user.trips.length).to.equal(1);
     expect(user.trips).to.deep.equal([{

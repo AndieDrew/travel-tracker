@@ -11,8 +11,9 @@ class User {
   }
   //method that returns trips based on past/present/upcoming or pending
   returnUsersTrips(data) {
-    const userTrips = data.filter(trip => trip.userID === this.id)
-    this.trips = userTrips
+     const userTrips = data.trips.filter(trip => trip.userID === this.id)
+     this.trips = userTrips
+    console.log("YEEEEET", this.trips)
   }
 }
 

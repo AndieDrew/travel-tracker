@@ -26,7 +26,7 @@ sampleTravelers: [{
   "travelerType": "thrill-seeker"
 }],
 
-sampleTrips: [{
+trips: [{
   "id": 1,
 "userID": 44,
 "destinationID": 49,

@@ -19,20 +19,19 @@
   <form class="trip-booking">
     <!-- date -->
     <label class="date-label">Pick an arrival date.</label>
-    <input class="date-input" id="" type="date">
+    <input class="date-input" id="dateInput" type="date">
     <!-- duration -->
     <label class="duration-label">How many days?</label>
-    <input class="duration-input" id="" type="number" value="1">
+    <input class="duration-input" id="durationInput" type="number" value="1">
     <!-- number of travelers -->
     <label class="travelers-amount-label">How many guests?</label>
-    <input class="travelers-amount-input" id="" type="number" value="1">
+    <input class="travelers-amount-input" id="travelersAmountInput" type="number" value="1">
     <!-- destination -->
     <label class="destination-label">Choose a destination.</label>
-    <select class="destination-selection">
-      <option value="dest">Fake place</option>
-      <option value="dest2">Fake place 2</option>
+    <select class="destination-selection" id="destinationSelection" >
     </select>
-    <button class="book-trip" type="button">Book Trip</button> <!-- Book a trip -->
+    <button class="check-price" id="checkPrice" type="button">Check Price</button>
+    <button class="book-trip" id="bookTrip" type="button">Book Trip</button> <!-- Book a trip -->
   </form>
 
   <section class="trips" id="trips">

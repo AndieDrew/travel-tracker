@@ -1,27 +1,27 @@
-// An example of how you tell webpack to use a CSS (SCSS) file
 import './css/base.scss';
-//import './dataHandler.js';
 
 import User from './user.js'
 import dataHandler from './dataHandler.js';
+import domUpdates from './domUpdates.js'
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
 
-//getting promise
-console.log("First", dataHandler.getAllTravelers())
+let welcome = document.querySelector('#welcome');
 
-//just getting the data in the promise
-dataHandler.getAllTravelers().then((result) => {
-//doing something with the data
-  console.log("ALL TRAVELERS",result)
-//  randomClass.method(result)
-})
+let user;
 
-//making sure getSingleTraveler works
-dataHandler.getSingleTraveler(1).then((result) => {
-  console.log("SINGLE TRAVELER", result.name)
-})
+window.onload = onStartup();
 
-
-dataHandler.getAllTrips().then((result) => {
-  console.log("ALL TRIPS", result)
-})
+function onStartup() { //need parameter that will represent user
+  dataHandler.getSingleTraveler(30)//have to pass in argument based on login in iteration3
+    .then(result => {
+        user = new User(result);
+      })
+    .then(() => dataHandler.getAllTrips())
+    .then(trips => {
+            user.returnUsersTrips(trips);
+            user.returnTotalSpent(2020);
+            //domUpdates.welcomeUser(this.name, this.total);
+            //domUpdates.populateCards(user.trips)
+//************ WHAT IS GOING ON WITH THIS CONSOLE.LOG???*****************
+}).then(() => console.log(user, "\n", "user.total:", user.total))
+}

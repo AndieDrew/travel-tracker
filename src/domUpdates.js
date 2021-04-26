@@ -1,6 +1,7 @@
 import dataHandler from './dataHandler.js';
 let yearsTotal = document.querySelector('#total'); //was undefined when in index.js
 let userTripSection = document.querySelector('#trips');
+let destinationSelection = document.querySelector('#destinationSelection');
 
 const domUpdates = {
 
@@ -13,6 +14,7 @@ const domUpdates = {
     console.log("DOM", trips)
     dataHandler.getAllDestinations()
       .then(result => {
+        domUpdates.populateDestinationSelect(result);
         trips.forEach(trip => {
           result.destinations.forEach(place => {
             if (trip.destinationID === place.id) {
@@ -28,16 +30,19 @@ const domUpdates = {
                 <p>Estimated lodging cost per day: ${place.estimatedLodgingCostPerDay}</p>
                 <p>Estimated flight cost per person: ${place.estimatedFlightCostPerPerson}</p>
               </div>`
-            } //need to add place.image
+            }
           })
         })
       })
-    // trips.forEach(trip => {
-    //   if (trip.destinationID === destination.id) {
-    //
-    //   }
-    // })
-  }
+  },
+
+  populateDestinationSelect(data) {
+    console.log("POP",data.destinations)
+    data.destinations.forEach(destination => {
+      destinationSelection.innerHTML +=
+      `<option class="${destination.id}" >${destination.destination}</option>`
+    })
+  },
 
 }
 

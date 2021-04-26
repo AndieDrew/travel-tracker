@@ -1,23 +1,44 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
-    <title>Travel Tracker</title>
-  </head>
-  <body>
-    <header>
-      <div class="top-header">
-        <h1 class="welcome" id="welcome"></h1><!-- welcome message -->
-        <button class="logout" type="button" name="button">Logout</button> <!-- logout button -->
-      </div>
-      <div class="bottom-header">
-        <h2 class="years-total" id="total"></h2> <!-- Total spent this year -->
-        <button class="book-trip" type="button" name="button">Book Trip</button> <!-- Book a trip -->
-      </div>
-    </header>
-    <section class="trips" id="trips">
-      <h3>All Trips</h3>
-    </section>
-    <!-- <section class="past-trips">
+
+<head>
+  <title>Travel Tracker</title>
+</head>
+
+<body>
+  <header>
+    <div class="top-header">
+      <h1 class="welcome" id="welcome"></h1><!-- welcome message -->
+      <button class="logout" type="button" name="button">Logout</button> <!-- logout button -->
+    </div>
+    <div class="bottom-header">
+      <h2 class="years-total" id="total"></h2> <!-- Total spent this year -->
+      <button class="book-trip" type="button" name="button">Book Trip</button> <!-- Book a trip -->
+    </div>
+  </header>
+
+  <form class="trip-booking">
+    <!-- date -->
+    <label class="date-label">Pick an arrival date.</label>
+    <input class="date-input" id="" type="date">
+    <!-- duration -->
+    <label class="duration-label">How many days?</label>
+    <input class="duration-input" id="" type="number" value="1">
+    <!-- number of travelers -->
+    <label class="travelers-amount-label">How many guests?</label>
+    <input class="travelers-amount-input" id="" type="number" value="1">
+    <!-- destination -->
+    <label class="destination-label">Choose a destination.</label>
+    <select class="destination-selection">
+      <option value="dest">Fake place</option>
+      <option value="dest2">Fake place 2</option>
+    </select>
+  </form>
+
+  <section class="trips" id="trips">
+    <h3>All Trips</h3>
+  </section>
+  <!-- <section class="past-trips">
       <h3>Past Trips</h3>
     </section>
     <section class="present">
@@ -32,6 +53,7 @@
 
 
 
-    <!-- Do not include the index.js or main.bundle.js file here - it is done automatically by the webpack server -->
-  </body>
+  <!-- Do not include the index.js or main.bundle.js file here - it is done automatically by the webpack server -->
+</body>
+
 </html>

@@ -1,6 +1,5 @@
 import './css/base.scss';
 
-
 import User from './user.js';
 import dataHandler from './dataHandler.js';
 import domUpdates from './domUpdates.js';
@@ -26,11 +25,11 @@ loginSubmit.addEventListener('click', validateLogin);
 logoutBtn.addEventListener('click', logout);
 
 function validateLogin() {
-  if(usernameInput.value && passwordInput.value) {
+  if (usernameInput.value && passwordInput.value) {
     event.preventDefault()
   }
-  if(usernameInput.value === "traveler50" && passwordInput.value === "travel2020") {
-    currentUser = (usernameInput.value).replace(/\D/g,'');
+  if (usernameInput.value === "traveler50" && passwordInput.value === "travel2020") {
+    currentUser = (usernameInput.value).replace(/\D/g, '');
     console.log(currentUser);
     afterLogin();
     domUpdates.login();
@@ -49,16 +48,22 @@ function afterLogin() {
     allDestinations = result
     domUpdates.populateDestinationSelect(allDestinations);
   });
-  dataHandler.getSingleTraveler(currentUser) //have to pass in argument based on login in iteration3
+  dataHandler.getSingleTraveler(currentUser)
     .then(result => {
       user = new User(result);
     })
     .then(() => dataHandler.getAllTrips())
     .then(result => {
       allTrips = result
-      user.returnUsersTrips(result, allDestinations);
-      user.returnTotalSpent(today.split('-')[0], allDestinations);
+      update(result, allDestinations);
     })
+}
+
+function update(result, allDestinations) {
+  user.returnUsersTrips(result, allDestinations);
+  user.returnTotalSpent(today.split('-')[0], allDestinations);
+  domUpdates.populateCards(user.trips, allDestinations)
+  domUpdates.welcomeUser(user.name, user.total);
 }
 
 function setMinDate() {
@@ -112,7 +117,6 @@ function postNewTrip(date) {
     .then(alert("Trip has been booked and is currently pending."))
     .catch(err => console.log(`POST Error: ${err.message}`))
   dataHandler.getAllTrips().then(result => {
-    user.returnUsersTrips(result, allDestinations);
-    user.returnTotalSpent(today.split('-')[0], allDestinations);
+    update(result, allDestinations);
   });
 }

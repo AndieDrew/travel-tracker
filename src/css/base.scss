@@ -27,7 +27,8 @@ form {
 
 button,
 .check-price,
-.book-trip {
+.book-trip,
+.submit-login {
   font-size: 18pt;
   color: white;
   font-weight: bold;
@@ -39,7 +40,8 @@ button,
 
 button:hover,
 .check-price:hover,
-.book-trip:hover {
+.book-trip:hover,
+.submit-login:hover {
   background-image: linear-gradient(#8e2de2, #4a00e0);
   box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
   background-attachment: fixed;

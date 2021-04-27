@@ -35,7 +35,6 @@ const domUpdates = {
   },
 
   populateDestinationSelect(data) {
-    console.log("BOOOOYAAAA >>>>", data);
     data.destinations.forEach(destination => {
       destinationSelection.innerHTML +=
         `<option  value="${destination.id}"> ${destination.destination}</option>`

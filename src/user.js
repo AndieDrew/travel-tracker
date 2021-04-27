@@ -1,5 +1,3 @@
-import domUpdates from './domUpdates.js'
-
 class User {
   constructor(data) {
     this.id = data.id;
@@ -12,11 +10,9 @@ class User {
   returnUsersTrips(allTrips, allDestinations) {
     const userTrips = allTrips.trips.filter(trip => trip.userID === this.id)
     this.trips = userTrips
-    domUpdates.populateCards(userTrips, allDestinations);
   }
 
   returnTotalSpent(currentYear, allDestinations) {
-    domUpdates.welcomeUser(this.name, this.total);
     this.trips.forEach(trip => {
       if (trip.date.includes(currentYear)) {
         allDestinations.destinations.forEach(destination => {
@@ -24,7 +20,6 @@ class User {
             let tripTotal = ((trip.travelers * destination.estimatedFlightCostPerPerson) +
               (trip.duration * destination.estimatedLodgingCostPerDay));
             this.addAgentFee(tripTotal)
-            domUpdates.welcomeUser(this.name, this.total);
           }
         })
       }

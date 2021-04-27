@@ -18,9 +18,7 @@ let passwordInput = document.querySelector('#passwordInput');
 let loginSubmit = document.querySelector('#submitLogin');
 let logoutBtn = document.querySelector('#logout');
 
-let user, allTrips, allDestinations, today;
-
-// window.onload = onStartup();
+let user, allTrips, allDestinations, today, currentUser;
 
 checkPriceBtn.addEventListener('click', checkPrice);
 bookTripBtn.addEventListener('click', bookTrip);
@@ -32,6 +30,8 @@ function validateLogin() {
     event.preventDefault()
   }
   if(usernameInput.value === "traveler50" && passwordInput.value === "travel2020") {
+    currentUser = (usernameInput.value).replace(/\D/g,'');
+    console.log(currentUser);
     afterLogin();
     domUpdates.login();
   } else {
@@ -49,7 +49,7 @@ function afterLogin() {
     allDestinations = result
     domUpdates.populateDestinationSelect(allDestinations);
   });
-  dataHandler.getSingleTraveler(30) //have to pass in argument based on login in iteration3
+  dataHandler.getSingleTraveler(currentUser) //have to pass in argument based on login in iteration3
     .then(result => {
       user = new User(result);
     })

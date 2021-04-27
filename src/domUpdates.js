@@ -1,6 +1,11 @@
 import dataHandler from './dataHandler.js';
-let yearsTotal = document.querySelector('#total'); //was undefined when in index.js
+import user from './user.js';
+
+let yearsTotal = document.querySelector('#total');
 let userTripSection = document.querySelector('#trips');
+let destinationSelection = document.querySelector('#destinationSelection');
+let tripPriceDisplay = document.querySelector('#tripPrice');
+
 
 const domUpdates = {
 
@@ -9,16 +14,12 @@ const domUpdates = {
     yearsTotal.innerText = `You've spent $${total} on trips this year.`;
   },
 
-  populateCards(trips) {
-    console.log("DOM", trips)
-    dataHandler.getAllDestinations()
-      .then(result => {
-        trips.forEach(trip => {
-          result.destinations.forEach(place => {
-            if (trip.destinationID === place.id) {
-              console.log(trip, place);
-              userTripSection.innerHTML +=
-              `<div class="card" >
+  populateCards(trips, allDestinations) {
+    trips.forEach(trip => {
+      allDestinations.destinations.forEach(place => {
+        if (trip.destinationID === place.id) {
+          userTripSection.innerHTML +=
+            `<div class="card" >
                 <img class="destination-img" src="${place.image}" alt="vacay">
                 <h3>${place.destination}.</h3>
                 <p>Travelers: ${trip.travelers}</p>
@@ -28,15 +29,21 @@ const domUpdates = {
                 <p>Estimated lodging cost per day: ${place.estimatedLodgingCostPerDay}</p>
                 <p>Estimated flight cost per person: ${place.estimatedFlightCostPerPerson}</p>
               </div>`
-            } //need to add place.image
-          })
-        })
+        }
       })
-    // trips.forEach(trip => {
-    //   if (trip.destinationID === destination.id) {
-    //
-    //   }
-    // })
+    })
+  },
+
+  populateDestinationSelect(data) {
+    console.log("BOOOOYAAAA >>>>", data);
+    data.destinations.forEach(destination => {
+      destinationSelection.innerHTML +=
+        `<option  value="${destination.id}"> ${destination.destination}</option>`
+    });
+  },
+
+  displayTripCost(total) {
+    tripPriceDisplay.innerText = `This trip will cost ${total}.`
   }
 
 }

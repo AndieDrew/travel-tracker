@@ -17,7 +17,17 @@ section {
   margin-top: 2%;
 }
 
-button {
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: solid 2px red;
+}
+
+button,
+.check-price,
+.book-trip {
   font-size: 18pt;
   color: white;
   font-weight: bold;
@@ -27,7 +37,9 @@ button {
   cursor: pointer;
 }
 
-button:hover{
+button:hover,
+.check-price:hover,
+.book-trip:hover {
   background-image: linear-gradient(#8e2de2, #4a00e0);
   box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
   background-attachment: fixed;
@@ -51,5 +63,6 @@ h3 {
 
 .card {
   text-align: center;
+  margin-bottom: 3%;
   border: solid 2px red;
 }

@@ -1,37 +1,45 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
-    <title>Travel Tracker</title>
-  </head>
-  <body>
-    <header>
-      <div class="top-header">
-        <h1 class="welcome" id="welcome"></h1><!-- welcome message -->
-        <button class="logout" type="button" name="button">Logout</button> <!-- logout button -->
-      </div>
-      <div class="bottom-header">
-        <h2 class="years-total" id="total"></h2> <!-- Total spent this year -->
-        <button class="book-trip" type="button" name="button">Book Trip</button> <!-- Book a trip -->
-      </div>
-    </header>
-    <section class="trips" id="trips">
-      <h3>All Trips</h3>
-    </section>
-    <!-- <section class="past-trips">
-      <h3>Past Trips</h3>
-    </section>
-    <section class="present">
-      <h3>Present Trips</h3>
-    </section>
-    <section class="upcoming">
-      <h3>Upcoming Trips</h3>
-    </section>
-    <section class="pending">
-      <h3>Pending Trips</h3>
-    </section> -->
 
+<head>
+  <title>Travel Tracker</title>
+</head>
 
+<body>
+  <header>
+    <div class="top-header">
+      <h1 class="welcome" id="welcome"></h1>
+      <button class="logout" id="logout" type="button" name="button">Logout</button>
+    </div>
+    <div class="bottom-header">
+      <h2 class="years-total" id="total"></h2>
+    </div>
+  </header>
 
-    <!-- Do not include the index.js or main.bundle.js file here - it is done automatically by the webpack server -->
-  </body>
+  <form class="trip-booking">
+
+    <label class="date-label">Pick an arrival date.</label>
+    <input class="date-input" id="dateInput" type="date" required="required">
+
+    <label class="duration-label">How many days?</label>
+    <input class="duration-input" id="durationInput" type="number" value="1" min="1" required="required">
+
+    <label class="travelers-amount-label">How many guests?</label>
+    <input class="travelers-amount-input" id="travelersAmountInput" type="number" value="1" min="1" required="required">
+
+    <label class="destination-label">Choose a destination.</label>
+    <select class="destination-selection" id="destinationSelection" required="required">
+    </select>
+
+    <input class="check-price" id="checkPrice" type="submit" value="Check Price">
+    <p class="trip-price" id="tripPrice"></p>
+    <input class="book-trip" id="bookTrip" type="submit" value="Book Trip">
+  </form>
+
+  <section class="trips" id="trips">
+    <h3>All Trips</h3>
+  </section>
+
+</body>
+
 </html>

@@ -6,17 +6,28 @@
 </head>
 
 <body>
-  <header>
+  <header class="header hidden" id="header">
     <div class="top-header">
       <h1 class="welcome" id="welcome"></h1>
-      <button class="logout" id="logout" type="button" name="button">Logout</button>
+      <button class="logout" id="logout" type="button">Logout</button>
     </div>
     <div class="bottom-header">
       <h2 class="years-total" id="total"></h2>
     </div>
   </header>
 
-  <form class="trip-booking">
+  <form class="login" id="login">
+      <label class="username-label">Enter Username</label>
+      <input class="username-input" id="usernameInput" type="text" required="required">
+
+      <label class="password-label">Enter Password</label>
+      <input class="password-input" id="passwordInput" type="text" required="required">
+
+      <input class="submit-login" id="submitLogin" type="submit">
+      <p class="login-feedback" id="loginFeedback"></p>
+  </form>
+
+  <form class="trip-booking hidden" id="tripBooking">
 
     <label class="date-label">Pick an arrival date.</label>
     <input class="date-input" id="dateInput" type="date" required="required">
@@ -36,7 +47,7 @@
     <input class="book-trip" id="bookTrip" type="submit" value="Book Trip">
   </form>
 
-  <section class="trips" id="trips">
+  <section class="trips hidden" id="trips">
     <h3>All Trips</h3>
   </section>
 

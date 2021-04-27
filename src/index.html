@@ -2,6 +2,9 @@
 <html lang="en-US">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Travel Tracker</title>
 </head>
 
@@ -17,10 +20,10 @@
   </header>
 
   <form class="login" id="login">
-      <label class="username-label">Enter Username</label>
+      <label class="username-label" for="usernameInput" >Enter Username</label>
       <input class="username-input" id="usernameInput" type="text" required="required">
 
-      <label class="password-label">Enter Password</label>
+      <label class="password-label" for="passwordInput">Enter Password</label>
       <input class="password-input" id="passwordInput" type="password" required="required">
 
       <input class="submit-login" id="submitLogin" type="submit">
@@ -29,16 +32,16 @@
 
   <form class="trip-booking hidden" id="tripBooking">
 
-    <label class="date-label">Pick an arrival date.</label>
+    <label class="date-label" for="dateInput">Pick an arrival date.</label>
     <input class="date-input" id="dateInput" type="date" required="required">
 
-    <label class="duration-label">How many days?</label>
+    <label class="duration-label" for="durationInput">How many days?</label>
     <input class="duration-input" id="durationInput" type="number" value="1" min="1" required="required">
 
-    <label class="travelers-amount-label">How many guests?</label>
+    <label class="travelers-amount-label" for="travelersAmountInput">How many guests?</label>
     <input class="travelers-amount-input" id="travelersAmountInput" type="number" value="1" min="1" required="required">
 
-    <label class="destination-label">Choose a destination.</label>
+    <label class="destination-label" for="destinationSelection">Choose a destination.</label>
     <select class="destination-selection" id="destinationSelection" required="required">
     </select>
 

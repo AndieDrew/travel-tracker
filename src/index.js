@@ -1,5 +1,4 @@
 import './css/base.scss';
-
 import User from './user.js';
 import dataHandler from './dataHandler.js';
 import domUpdates from './domUpdates.js';
@@ -11,7 +10,6 @@ let guestAmount = document.querySelector('#travelersAmountInput');
 let destinationSelection = document.querySelector('#destinationSelection');
 let checkPriceBtn = document.querySelector('#checkPrice');
 let bookTripBtn = document.querySelector('#bookTrip');
-
 let usernameInput = document.querySelector('#usernameInput');
 let passwordInput = document.querySelector('#passwordInput');
 let loginSubmit = document.querySelector('#submitLogin');
@@ -28,9 +26,8 @@ function validateLogin() {
   if (usernameInput.value && passwordInput.value) {
     event.preventDefault()
   }
-  if (usernameInput.value === "traveler50" && passwordInput.value === "travel2020") {
+  if (usernameInput.value.replace(/\d+/g, '') === "traveler" && passwordInput.value === "travel2020") {
     currentUser = (usernameInput.value).replace(/\D/g, '');
-    console.log(currentUser);
     afterLogin();
     domUpdates.login();
   } else {
@@ -59,17 +56,17 @@ function afterLogin() {
     })
 }
 
+function setMinDate() {
+  let currentTime = new Date();
+  today = currentTime.toISOString().substring(0, 10);
+  dateInput.setAttribute("min", today);
+}
+
 function update(result, allDestinations) {
   user.returnUsersTrips(result, allDestinations);
   user.returnTotalSpent(today.split('-')[0], allDestinations);
   domUpdates.populateCards(user.trips, allDestinations)
   domUpdates.welcomeUser(user.name, user.total);
-}
-
-function setMinDate() {
-  let currentTime = new Date();
-  today = currentTime.toISOString().substring(0, 10);
-  dateInput.setAttribute("min", today);
 }
 
 function checkPrice() {

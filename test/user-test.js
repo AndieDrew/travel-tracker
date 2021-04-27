@@ -1,9 +1,6 @@
 import chai from 'chai';
 const expect = chai.expect;
 
-//import dataHandler from '../src/dataHandler.js';
-//import sampleTravelers from './sampleTestData';
-//might need to import trips data
 import data from './sampleTestData'
 import User from '../src/user'
 

@@ -1,45 +1,39 @@
-//Reminder to import stuff when needed
-//import data from '../test/sampleTestData'
-import dataHandler from './dataHandler.js';
 import domUpdates from './domUpdates.js'
 
 class User {
-  constructor(data) { //might need second parameter for trips?
+  constructor(data) {
     this.id = data.id;
     this.name = data.name;
     this.type = data.travelerType;
-    this.trips = null; //Can I set this to a function?
+    this.trips = null;
     this.total = 0;
-
   }
 
-  returnUsersTrips(data) {
-    const userTrips = data.trips.filter(trip => trip.userID === this.id)
+  returnUsersTrips(allTrips, allDestinations) {
+    const userTrips = allTrips.trips.filter(trip => trip.userID === this.id)
     this.trips = userTrips
-    domUpdates.populateCards(this.trips);//should be in scripts (it isnt exporting properly)
+    domUpdates.populateCards(userTrips, allDestinations);
   }
 
-  returnTotalSpent(currentYear) {
-    dataHandler.getAllDestinations()
-      .then((result) => {
-        this.trips.forEach(trip => {
-          if (trip.date.includes(currentYear)) {
-            result.destinations.forEach(destination => {
-              if (trip.destinationID === destination.id) {
-                let tripTotal = ((trip.travelers * destination.estimatedFlightCostPerPerson) +
-                  (trip.duration * destination.estimatedLodgingCostPerDay))
-                this.testMethod(tripTotal)
-              }
-            })
+  returnTotalSpent(currentYear, allDestinations) {
+    domUpdates.welcomeUser(this.name, this.total);
+    this.trips.forEach(trip => {
+      if (trip.date.includes(currentYear)) {
+        allDestinations.destinations.forEach(destination => {
+          if (trip.destinationID === destination.id) {
+            let tripTotal = ((trip.travelers * destination.estimatedFlightCostPerPerson) +
+              (trip.duration * destination.estimatedLodgingCostPerDay));
+            this.addAgentFee(tripTotal)
+            domUpdates.welcomeUser(this.name, this.total);
           }
         })
-      })
+      }
+    })
   }
 
-  testMethod(tripCost) {
+  addAgentFee(tripCost) {
     let costAfterFee = tripCost + (tripCost * .1)
     this.total += costAfterFee;
-    domUpdates.welcomeUser(this.name, this.total);//should be in scripts(it isnt exporting properly)
   }
 
 }

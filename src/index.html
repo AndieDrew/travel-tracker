@@ -8,51 +8,38 @@
 <body>
   <header>
     <div class="top-header">
-      <h1 class="welcome" id="welcome"></h1><!-- welcome message -->
-      <button class="logout" id="logout" type="button" name="button">Logout</button> <!-- logout button -->
+      <h1 class="welcome" id="welcome"></h1>
+      <button class="logout" id="logout" type="button" name="button">Logout</button>
     </div>
     <div class="bottom-header">
-      <h2 class="years-total" id="total"></h2> <!-- Total spent this year -->
+      <h2 class="years-total" id="total"></h2>
     </div>
   </header>
 
   <form class="trip-booking">
-    <!-- date -->
+
     <label class="date-label">Pick an arrival date.</label>
-    <input class="date-input" id="dateInput" type="date">
-    <!-- duration -->
+    <input class="date-input" id="dateInput" type="date" required="required">
+
     <label class="duration-label">How many days?</label>
-    <input class="duration-input" id="durationInput" type="number" value="1">
-    <!-- number of travelers -->
+    <input class="duration-input" id="durationInput" type="number" value="1" min="1" required="required">
+
     <label class="travelers-amount-label">How many guests?</label>
-    <input class="travelers-amount-input" id="travelersAmountInput" type="number" value="1">
-    <!-- destination -->
+    <input class="travelers-amount-input" id="travelersAmountInput" type="number" value="1" min="1" required="required">
+
     <label class="destination-label">Choose a destination.</label>
-    <select class="destination-selection" id="destinationSelection" >
+    <select class="destination-selection" id="destinationSelection" required="required">
     </select>
-    <button class="check-price" id="checkPrice" type="button">Check Price</button>
-    <button class="book-trip" id="bookTrip" type="button">Book Trip</button> <!-- Book a trip -->
+
+    <input class="check-price" id="checkPrice" type="submit" value="Check Price">
+    <p class="trip-price" id="tripPrice"></p>
+    <input class="book-trip" id="bookTrip" type="submit" value="Book Trip">
   </form>
 
   <section class="trips" id="trips">
     <h3>All Trips</h3>
   </section>
-  <!-- <section class="past-trips">
-      <h3>Past Trips</h3>
-    </section>
-    <section class="present">
-      <h3>Present Trips</h3>
-    </section>
-    <section class="upcoming">
-      <h3>Upcoming Trips</h3>
-    </section>
-    <section class="pending">
-      <h3>Pending Trips</h3>
-    </section> -->
 
-
-
-  <!-- Do not include the index.js or main.bundle.js file here - it is done automatically by the webpack server -->
 </body>
 
 </html>

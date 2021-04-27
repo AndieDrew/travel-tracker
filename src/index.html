@@ -6,7 +6,7 @@
 </head>
 
 <body>
-  <header>
+  <header class="hidden"> <!-- Hidden before login -->
     <div class="top-header">
       <h1 class="welcome" id="welcome"></h1>
       <button class="logout" id="logout" type="button" name="button">Logout</button>
@@ -16,7 +16,7 @@
     </div>
   </header>
 
-  <form class="trip-booking">
+  <form class="trip-booking hidden"> <!-- Hidden before login -->
 
     <label class="date-label">Pick an arrival date.</label>
     <input class="date-input" id="dateInput" type="date" required="required">
@@ -36,7 +36,7 @@
     <input class="book-trip" id="bookTrip" type="submit" value="Book Trip">
   </form>
 
-  <section class="trips" id="trips">
+  <section class="trips hidden" id="trips">  <!-- Hidden before login -->
     <h3>All Trips</h3>
   </section>
 

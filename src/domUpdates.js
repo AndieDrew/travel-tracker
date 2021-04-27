@@ -5,9 +5,26 @@ let yearsTotal = document.querySelector('#total');
 let userTripSection = document.querySelector('#trips');
 let destinationSelection = document.querySelector('#destinationSelection');
 let tripPriceDisplay = document.querySelector('#tripPrice');
-
+let header = document.querySelector('#header');
+let login = document.querySelector('#login');
+let tripBooking= document.querySelector('#tripBooking');
+let trips = document.querySelector('#trips');
+let loginFeedback = document.querySelector('#loginFeedback');
 
 const domUpdates = {
+
+  login() {
+    login.classList.add('hidden');
+    header.classList.remove('hidden');
+    tripBooking.classList.remove('hidden');
+    trips.classList.remove('hidden');
+  },
+
+  loginDenied(username, password) {
+    username.value = "";
+    password.value = "";
+    loginFeedback.innerText = 'Wrong Username or Password';
+  },
 
   welcomeUser(userName, total) {
     welcome.innerText = `Welcome ${userName}!`;

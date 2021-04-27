@@ -13,16 +13,37 @@ let destinationSelection = document.querySelector('#destinationSelection');
 let checkPriceBtn = document.querySelector('#checkPrice');
 let bookTripBtn = document.querySelector('#bookTrip');
 
-
+let usernameInput = document.querySelector('#usernameInput');
+let passwordInput = document.querySelector('#passwordInput');
+let loginSubmit = document.querySelector('#submitLogin');
+let logoutBtn = document.querySelector('#logout');
 
 let user, allTrips, allDestinations, today;
 
-window.onload = onStartup();
+// window.onload = onStartup();
 
 checkPriceBtn.addEventListener('click', checkPrice);
 bookTripBtn.addEventListener('click', bookTrip);
+loginSubmit.addEventListener('click', validateLogin);
+logoutBtn.addEventListener('click', logout);
 
-function onStartup() {
+function validateLogin() {
+  if(usernameInput.value && passwordInput.value) {
+    event.preventDefault()
+  }
+  if(usernameInput.value === "traveler50" && passwordInput.value === "travel2020") {
+    afterLogin();
+    domUpdates.login();
+  } else {
+    domUpdates.loginDenied(usernameInput, passwordInput);
+  }
+}
+
+function logout() {
+  window.location.reload();
+}
+
+function afterLogin() {
   setMinDate();
   dataHandler.getAllDestinations().then(result => {
     allDestinations = result

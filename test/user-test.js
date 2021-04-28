@@ -109,4 +109,12 @@ describe('User', () => {
     expect(user1.total).to.equal(4543)
   })
 
+  it('Should add a 10% agent fee to total', () => {
+    user1.addAgentFee(1000);
+    expect(user1.total).to.equal(1100);
+
+    user2.addAgentFee(5000);
+    expect(user2.total).to.equal(5500)
+  })
+
 })

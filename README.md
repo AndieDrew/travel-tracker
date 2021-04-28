@@ -3,7 +3,6 @@
 ## A vacation booking service!.
 
 ### A solo project by [Andrew Carlin](https://github.com/AndieDrew)
-Find this application on Github pages [here]()
 
 Travel Tracker allows a user to login to view all their trips and book future ones.
 

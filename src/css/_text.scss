@@ -1,0 +1,23 @@
+label {
+  font-size: 2em;
+  margin-bottom: 8px;
+}
+
+p {
+  font-size: $medium-font;
+}
+
+h1 {
+  text-align: $text-align;
+  font-size: $large-font;
+}
+
+h2 {
+  font-size: 35px;
+}
+
+h3 {
+  font-size: $large-font;
+  text-align: $text-align;
+  color: #d44a1e;
+}

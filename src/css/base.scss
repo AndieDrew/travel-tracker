@@ -1,32 +1,73 @@
-/* This is an example of using Sass, otherwise plain CSS works too*/
-$primary-background: linear-gradient(#283048, #859398);
+// @import '_variables';
+// @import '_containers';
+// @import '_interactions';
+// @import '_text';
+// @import '_cards';
+// @import '_mediaquery';
 
 
-body {
+$primary-background: linear-gradient(#005AA7, #FFFDE4);
+$section-color: linear-gradient(#232526, #414345);
+$display: flex;
+$text-align: center;
+$medium-font: 30px;
+$large-font: 40px;
+
+body { //in file
   background: $primary-background;
   background-attachment: fixed;
   color: #FFC107;
+
+    header {
+      border-radius: 25px;
+      background: $section-color;
+        .top-header,
+        .bottom-header {
+          display: $display;
+          justify-content: space-between;
+        }
+    }
+
+    form {
+      display: $display;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 25px;
+      background: $section-color;
+      margin: 40px 4% 0px 4%;
+    }
+
+    section {
+      margin-top: 2%;
+    }
 }
 
-header {
-  border: solid 2px cyan;
+
+label { //in file
+  font-size: 2em;
+  margin-bottom: 8px;
 }
 
-section {
-  border: solid 2px red;
-  margin-top: 2%;
+select { //in file
+  font-size: 115%;
+  margin-bottom: 25px;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: solid 2px red;
+p { //in file
+  font-size: $medium-font;
 }
 
+.username-input,//in file
+.password-input,
+.date-input,
+.duration-input,
+.travelers-amount-input {
+  font-size: $medium-font;
+  margin-bottom: 25px;
+}
 
-.check-price,
+.check-price,//in file
 .book-trip,
 .submit-login,
 .logout {
@@ -37,9 +78,10 @@ form {
   border-radius: 5px;
   background-color: #512DA8;
   cursor: pointer;
+  margin-top: 2%;
 }
 
-button:hover,
+button:hover, //in file
 .check-price:hover,
 .book-trip:hover,
 .submit-login:hover,
@@ -49,28 +91,42 @@ button:hover,
   background-attachment: fixed;
 }
 
-h3 {
-  text-align: center;
+h1 { // in file
+  text-align: $text-align;
+  font-size: $large-font;
 }
 
-.top-header,
-.bottom-header {
-  display: flex;
-  justify-content: space-between;
-  border: solid 2px red;
+h2 { // in file
+  font-size: 35px;
 }
 
-.destination-img {
+h3 { // in file
+  font-size: $large-font;
+  text-align: $text-align;
+  color: #d44a1e;
+}
+
+
+
+.destination-img { //in file
   max-width: 50%;
   max-height: 10%;
+  margin-top: 20px;
 }
 
-.card {
-  text-align: center;
-  margin-bottom: 3%;
-  border: solid 2px red;
+.card { //in file
+  text-align: $text-align;
+  margin: 40px 4% 0px 4%;
+  border-radius: 25px;
+  background: $section-color;
 }
 
-.hidden {
+.hidden { //in file
   display: none;
+}
+
+@media screen and (max-width: 1000px) { //in file
+  .logout {
+    margin: 50px 1px 50px 1px;
+  }
 }

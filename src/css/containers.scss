@@ -1,0 +1,30 @@
+
+body {
+  background: $primary-background;
+  background-attachment: fixed;
+  color: #FFC107;
+
+    header {
+      border-radius: 25px;
+      background: $section-color;
+        .top-header,
+        .bottom-header {
+          display: $display;
+          justify-content: space-between;
+        }
+    }
+
+    form {
+      display: $display;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 25px;
+      background: $section-color;
+      margin: 40px 4% 0px 4%;
+    }
+
+    section {
+      margin-top: 2%;
+    }
+}

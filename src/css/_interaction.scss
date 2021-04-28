@@ -1,0 +1,41 @@
+select {
+  font-size: 115%;
+  margin-bottom: 25px;
+}
+
+.username-input,
+.password-input,
+.date-input,
+.duration-input,
+.travelers-amount-input {
+  font-size: $medium-font;
+  margin-bottom: 25px;
+}
+
+.check-price,
+.book-trip,
+.submit-login,
+.logout {
+  font-size: 18pt;
+  color: white;
+  font-weight: bold;
+  border: solid 3px #7375B5;
+  border-radius: 5px;
+  background-color: #512DA8;
+  cursor: pointer;
+  margin-top: 2%;
+}
+
+button:hover,
+.check-price:hover,
+.book-trip:hover,
+.submit-login:hover,
+.logout:hover {
+  background-image: linear-gradient(#8e2de2, #4a00e0);
+  box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+  background-attachment: fixed;
+}
+
+.hidden {
+  display: none;
+}

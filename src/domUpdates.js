@@ -36,7 +36,7 @@ const domUpdates = {
       allDestinations.destinations.forEach(place => {
         if (trip.destinationID === place.id) {
           userTripSection.innerHTML +=
-            `<div class="card" >
+            `<article class="card" >
                 <img class="destination-img" src="${place.image}" alt="vacay">
                 <h3>${place.destination}.</h3>
                 <p>Travelers: ${trip.travelers}</p>
@@ -45,7 +45,7 @@ const domUpdates = {
                 <p>Status: ${trip.status}</p>
                 <p>Estimated lodging cost per day: ${place.estimatedLodgingCostPerDay}</p>
                 <p>Estimated flight cost per person: ${place.estimatedFlightCostPerPerson}</p>
-              </div>`
+              </article>`
         }
       })
     })

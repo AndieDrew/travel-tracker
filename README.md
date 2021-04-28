@@ -22,7 +22,7 @@ Travel Tracker allows a user to login to view all their trips and book future on
 * SCSS
 * Webpack
 * Fetch API
-*
+
 
 ### Future Additions:
 1. Refactoring for enhanced performance

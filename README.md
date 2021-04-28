@@ -16,6 +16,9 @@ Travel Tracker allows a user to login to view all their trips and book future on
 4. npm install in this directory as well
 5. npm start in both directories
 6. enter this in your browser: http://localhost:8080/
+7. To login, type traveler50 into username and travel2020 into password. 
+8. You can login as any user 1-50 by replacing the 50 in traveler50 with any number between 1-50 representing different users.
+9. You can look at all your trips, and check the price of a potential trip before you book it.
 
 ### Technologies used:
 * Javascript

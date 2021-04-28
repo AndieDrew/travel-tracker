@@ -63,7 +63,7 @@ function setMinDate() {
 }
 
 function update(result, allDestinations) {
-  user.returnUsersTrips(result, allDestinations);
+  user.returnUsersTrips(result);
   user.returnTotalSpent(today.split('-')[0], allDestinations);
   domUpdates.populateCards(user.trips, allDestinations)
   domUpdates.welcomeUser(user.name, user.total);

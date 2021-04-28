@@ -13,7 +13,7 @@ Travel Tracker allows a user to login to view all their trips and book future on
 1. Clone this Repo
 2. npm install in the directory
 3. Clone this local server: https://github.com/turingschool-examples/travel-tracker-api
-4. npm install in this directory as well directory
+4. npm install in this directory as well
 5. npm start in both directories
 6. enter this in your browser: http://localhost:8080/
 

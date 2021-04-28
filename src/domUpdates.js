@@ -32,6 +32,7 @@ const domUpdates = {
   },
 
   populateCards(trips, allDestinations) {
+    userTripSection.innerHTML = '';
     trips.forEach(trip => {
       allDestinations.destinations.forEach(place => {
         if (trip.destinationID === place.id) {

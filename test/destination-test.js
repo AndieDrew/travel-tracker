@@ -1,7 +1,6 @@
 import chai from 'chai';
 const expect = chai.expect;
 
-import data from './sampleTestData'
 import Destination from '../src/destination'
 
 let destination1, destination2;

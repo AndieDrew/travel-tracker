@@ -3,11 +3,11 @@ class User {
     this.id = data.id;
     this.name = data.name;
     this.type = data.travelerType;
-    this.trips = null;
+    this.trips = [];
     this.total = 0;
   }
 
-  returnUsersTrips(allTrips, allDestinations) {
+  returnUsersTrips(allTrips) {
     const userTrips = allTrips.trips.filter(trip => trip.userID === this.id)
     this.trips = userTrips
   }

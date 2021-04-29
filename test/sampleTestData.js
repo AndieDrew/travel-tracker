@@ -77,7 +77,7 @@ trips: [{
 "suggestedActivities": []
 }],
 
-sampleDestinations: [{
+destinations: [{
   "id": 1,
   "destination": "Lima, Peru",
   "estimatedLodgingCostPerDay": 70,
@@ -116,7 +116,15 @@ sampleDestinations: [{
   "estimatedFlightCostPerPerson": 650,
   "image": "https://images.unsplash.com/photo-1543785734-4b6e564642f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
   "alt": "city with clear skys and a road in the day time"
-}],
+},
+{
+"id": 22,
+"destination": "Rome, Italy",
+"estimatedLodgingCostPerDay": 90,
+"estimatedFlightCostPerPerson": 650,
+"image": "https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
+"alt": "people standing inside a colosseum during the day"
+},],
 }
 
 

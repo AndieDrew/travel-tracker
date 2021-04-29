@@ -1,5 +1,6 @@
 import './css/base.scss';
 import User from './user.js';
+import Destination from './destination.js';
 import dataHandler from './dataHandler.js';
 import domUpdates from './domUpdates.js';
 
@@ -63,21 +64,20 @@ function setMinDate() {
 }
 
 function update(result, allDestinations) {
-  user.returnUsersTrips(result, allDestinations);
+  user.returnUsersTrips(result);
   user.returnTotalSpent(today.split('-')[0], allDestinations);
   domUpdates.populateCards(user.trips, allDestinations)
   domUpdates.welcomeUser(user.name, user.total);
 }
 
 function checkPrice() {
-  let date = dateInput.value.split('-').join('/')
   if (dateInput.value && durationInput.value && guestAmount.value && destinationSelection.value) {
+    let date = dateInput.value.split('-').join('/')
     event.preventDefault();
     let specificLocation = allDestinations.destinations.find(destination => destination.id === Number(destinationSelection.value))
-    let totalBeforeFee = ((guestAmount.value * specificLocation.estimatedFlightCostPerPerson) +
-      (durationInput.value * specificLocation.estimatedLodgingCostPerDay))
-    let totalAfterFee = totalBeforeFee + (totalBeforeFee * .1)
-    domUpdates.displayTripCost(totalAfterFee)
+    let destination = new Destination(specificLocation)
+    let price = destination.returnPrice(Number(guestAmount.value), Number(durationInput.value));
+    domUpdates.displayTripCost(price)
   }
 }
 

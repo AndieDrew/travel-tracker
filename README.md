@@ -8,6 +8,7 @@ Travel Tracker allows a user to login to view all their trips and book future on
 
 
 Fully Responsive! Lighthouse Accessability score 100%
+
 ![Annotations](https://media.giphy.com/media/zjkldqmieb19ERGYPz/giphy.gif)
 
 ![Annotations](https://media.giphy.com/media/xtmlTYyh70gXcdFvOj/giphy.gif)

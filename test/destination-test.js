@@ -55,8 +55,4 @@ describe('User', () => {
     expect(destination2.returnPrice(3, 2)).to.equal(2794);
   })
 
-  // it('Should', () => {
-  //   expect().to.();
-  // })
-
 })
